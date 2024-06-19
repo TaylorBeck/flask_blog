@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        <footer>
+            <small>Posted on {{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+        </footer>
+    </article>
+    <a href="{{ url_for('main.edit_post', post_id=post.id) }}">Edit</a>
+    <form method="POST" action="{{ url_for('main.delete_post', post_id=post.id) }}" onsubmit="return confirm('Are you sure you want to delete this post?');">
+        <button type="submit">Delete Post</button>
+    </form>
+{% endblock %}

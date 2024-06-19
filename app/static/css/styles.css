@@ -96,8 +96,16 @@ form input[type="submit"] {
   border-radius: 5px;
 }
 
+form input[type="submit"].delete {
+  background-color: #c70000;
+}
+
 form input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+form input[type="submit"].delete:hover {
+  background-color: #d74c4c;
 }
 
 form .title {
