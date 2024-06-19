@@ -3,15 +3,15 @@
     <h1>Create New Post</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
-        <div>
+        <div class="title">
             {{ form.title.label }}
             {{ form.title(size=32) }}
         </div>
-        <div>
+        <div class="content">
             {{ form.content.label }}
             {{ form.content(rows=10) }}
         </div>
-        <div>
+        <div class="submit">
             {{ form.submit() }}
         </div>
     </form>
