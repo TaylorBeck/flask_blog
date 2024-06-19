@@ -16,7 +16,7 @@ dist/
 # Flask instance folder
 instance/
 
-# Flask SQLite database file
+# Flask SQLite database files
 site.db
 
 # Environment variables file
