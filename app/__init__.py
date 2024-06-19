@@ -1,16 +1,18 @@
 from flask import Flask
-from app.database import db
+from flask_sqlalchemy import SQLAlchemy
+from instance.config import Config
+
+db = SQLAlchemy()
 
 def create_app():
-    app = Flask(__name__, instance_relative_config=True)
-
-    app.config['SECRET_KEY'] = '🌮'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    
+    app = Flask(__name__)
+    app.config.from_object(Config)
     db.init_app(app)
 
-    from app.routes import main
-    app.register_blueprint(main)
+    from app.routes import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+    with app.app_context():
+        db.create_all()
 
     return app
