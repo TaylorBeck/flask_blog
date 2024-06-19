@@ -14,7 +14,7 @@ This is a simple blog application built using Flask. The application allows user
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/flask_blog.git
+    git clone https://github.com/TaylorBeck/flask_blog.git
     cd flask_blog
     ```
 
